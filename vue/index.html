@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script type="text/javascript" src="/index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+    <div id="app">
+      {{number}}
+      <button v-on:click="countUp">up</button>
+      <button @click="countUp">up省略形</button>
+      <div v-text="number"></div>
+      <div v-if="number==5">条件次第で表示</div>
+      <ul>
+        <li v-for="item in items">{{item}}繰り返す</li>
+      </ul>
+      <div v-bind:class="colorXX">{{colorXX}}カラー</div>
+      <div :class="colorXX">{{colorXX}}カラー省略形</div>
+      <!-- ちなみに、タグの中に{{}}を書いたりは出来ない。imgで画像を分けたいときは・・・? -->
+      <input type="text" v-model="colorXX" />
+      <!-- v-modelは双方向バインディングといい、HTMLとデータを紐付けることができる -->
+      <!-- v-bindはデータ→htmlしか出来ない -->
+      {{custom_color}}
+    </div>
+  </body>
+  <script>
+    let N = 0; //0はbooleanとしてはflaseになる
+
+    new Vue({
+      el: "#app",
+      data: {
+        // dataは基本的に初期値を設定するものなので、thisを用いた値更新等はできない
+        number: N,
+        items: [1, 2, 3],
+        colorXX: "",
+      },
+      methods: {
+        countUp: function () {
+          this.number++;
+        },
+      },
+      computed: {
+        // dataとmethodsをあわせたようなもの
+        custom_color: function () {
+          return this.colorXX.toUpperCase();
+        },
+      },
+    });
+
+    // import indexJs from "/index.js";
+  </script>
+</html>
