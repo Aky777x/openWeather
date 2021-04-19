@@ -1,0 +1,93 @@
+.room {
+  /*親div*/
+  position: relative; /*相対配置*/
+}
+/*-----------------------吹き出し----------------------------*/
+
+/* 吹き出し本体 - 普通の吹き出し */
+.hot {
+  width: 80px;
+  position: relative;
+  padding: 20px;
+  border-radius: 35px; /* 角丸を指定 */
+  background-color: #e42e2e;
+  border-color: #e42e2e;
+  box-shadow: none;
+}
+
+/* アイコンを下に表示 */
+.hot::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 20px;
+  bottom: -12px;
+  border-top: 20px solid #e42e2e;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+/* 吹き出し本体 - 普通の吹き出し */
+.cold {
+  width: 80px;
+  position: relative;
+  padding: 20px;
+  border-radius: 35px; /* 角丸を指定 */
+  background-color: aqua;
+  border-color: aqua;
+  box-shadow: none;
+}
+/* アイコンを下に表示 */
+.cold::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 20px;
+  bottom: -12px;
+  border-top: 20px solid aqua;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+/* 吹き出し本体 - 普通の吹き出し */
+.comfortable {
+  width: 80px;
+  position: relative;
+  padding: 20px;
+  border-radius: 35px; /* 角丸を指定 */
+  background-color: lawngreen;
+  border-color: lawngreen;
+  box-shadow: none;
+}
+/* アイコンを下に表示 */
+.comfortable::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 20px;
+  bottom: -12px;
+  border-top: 20px solid lawngreen;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+/*-----------------------トイレ----------------------------*/
+
+.room #toilet {
+  position: absolute; /*絶対配置*/
+  top: 25px;
+  left: 335px;
+}
+
+/*-----------------------左の洋室----------------------------*/
+
+.room #leftRoom {
+  position: absolute; /*絶対配置*/
+  top: 380px;
+  left: 130px;
+}
