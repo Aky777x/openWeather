@@ -4,7 +4,7 @@ var messageList = $("#messages");
 //openweathermap（天気予報API）に接続
 var request = new XMLHttpRequest();
 var cityName = "fukuoka";
-var owmApiKey = "";
+var owmApiKey = "990ae9687d4325edb19a1e38e7c1f966";
 var owmURL =
   "http://api.openweathermap.org/data/2.5/weather?q=" +
   cityName +
